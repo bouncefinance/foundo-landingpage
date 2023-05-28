@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import CenterSection from "components/CenterSection";
-import FixedIndex from 'components/Banner/FixedIndex'
-import FixedLeft from 'components/Banner/FixedLeft'
+import FixedIndex from "components/Banner/FixedIndex";
+import FixedLeft from "components/Banner/FixedLeft";
 export default function One() {
   return (
     <CenterSection

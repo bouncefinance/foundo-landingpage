@@ -6,7 +6,7 @@ export default function Two() {
     <CenterSection
       style={{
         width: "100%",
-        padding: "1207px 0",
+        padding: "1200px 0 1200px",
       }}
     >
       <Typography

@@ -10,7 +10,7 @@ import ProdIcon from "assets/img/mainImg.png";
 import Logo from "assets/img/logo1.png";
 import { useIsSMDown } from "../../theme/useTheme";
 
-export default function ProductCard() {
+export default function ProductCard({ hideProduct }: { hideProduct?: boolean; }) {
   const isMd = useIsSMDown();
   const config = [
     {
@@ -127,6 +127,7 @@ export default function ProductCard() {
           width: isMd ? 250 : 420,
           height: isMd ? 250 : 420,
           objectFit: "contain",
+          opacity: hideProduct ? 0 : 1,
           overflow: "hidden",
         }}
         alt=""
@@ -136,8 +137,8 @@ export default function ProductCard() {
         style={{
           position: "absolute",
           width: isMd ? 33 : 58,
-          left: isMd ? 16 :24,
-          bottom: isMd ? 24 :27,
+          left: isMd ? 16 : 24,
+          bottom: isMd ? 24 : 27,
           cursor: "pointer",
         }}
         alt=""

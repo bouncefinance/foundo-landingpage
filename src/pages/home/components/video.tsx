@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-
+import BackVideo from 'assets/video/backVideo.mp4'
 export default function VideoSection() {
   return (
     <Box
@@ -27,7 +27,7 @@ export default function VideoSection() {
         muted
         loop
         autoPlay
-        src="https://images-v3.bounce.finance/74560e87b071e1a1e514ca1df9de8cfc-1675665928.mov"
+        src={BackVideo}
       ></video>
     </Box>
   );
