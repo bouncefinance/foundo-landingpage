@@ -14,7 +14,9 @@ export default function Four() {
       sx={{
         position: "relative",
         width: "100%",
+        maxWidth: "1400px",
         padding: "301px 0 360px",
+        margin: "0 auto",
       }}
     >
       <Box

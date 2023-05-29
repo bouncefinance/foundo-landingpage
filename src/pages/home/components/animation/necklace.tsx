@@ -1,7 +1,9 @@
 import NecklaceJson from "assets/lottie/animatinDm4.json";
 import { create } from "@lottiefiles/lottie-interactivity";
 import { useEffect, useRef } from "react";
+import { useIsSMDown } from "../../../../theme/useTheme";
 require("@lottiefiles/lottie-player");
+
 const Necklace = ({
   style,
   animationRatio,
@@ -9,15 +11,17 @@ const Necklace = ({
   style?: React.CSSProperties;
   animationRatio?: string;
 }) => {
+  const isMd = useIsSMDown();
   const lottieEl = useRef<any>(null);
   useEffect(() => {
-    if (lottieEl !== null && lottieEl.current) {
+    const lottieIdEl = document.getElementById('lottie-player')
+    if ((lottieEl !== null && lottieEl?.current) || lottieIdEl) {
       //   const totalFrames = lottieEl.current?.getLottie()?.totalFrames;
       //   console.log("lottieEl>>>", lottieEl.current, totalFrames);
       // 4. configure the interactivity library
       create({
         mode: "scroll",
-        player: '#lottie-player',
+        player: lottieIdEl || "#lottie-player",
         container: "#animation1",
         actions: [
           {
@@ -39,8 +43,8 @@ const Necklace = ({
       style={{
         position: "fixed",
         top: `${animationRatio ? Number(animationRatio) * 50 : 0}%`,
-        width: "400px",
-        height: "500px",
+        width: isMd ? "100%" : "400px",
+        height: isMd ? "100%" : "500px",
         left: "50%",
         transform: `translate3D(-50%, -${
           animationRatio ? Number(animationRatio) * 50 : 0
