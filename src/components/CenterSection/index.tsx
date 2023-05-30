@@ -7,7 +7,7 @@ interface CenterSectionParams {
 }
 export default function CenterSection(props: CenterSectionParams) {
   const isSm = useIsSMDown();
-  const theme = useTheme()
+  const theme = useTheme();
   const { children, style } = props;
   return (
     <Box
@@ -20,11 +20,14 @@ export default function CenterSection(props: CenterSectionParams) {
         justifyContent: "space-between",
         alignItems: "center",
         margin: " 0 auto",
-        [theme.breakpoints.up('xl')]: {
-            maxWidth: "1920px !important",
-        },
-        [theme.breakpoints.up('lg')]: {
+        [theme.breakpoints.up("lg")]: {
             maxWidth: "1400px !important",
+          },
+        [theme.breakpoints.down("lg")]: {
+          maxWidth: "1400px !important",
+        },
+        [theme.breakpoints.down("md")]: {
+          maxWidth: "1000px !important",
         },
         ...style,
       }}

@@ -20,25 +20,25 @@ const ArtistiImg = styled(Box)(({ theme }) => ({
     height: 215,
     objectFit: "contain",
     overflow: "hidden",
-    border: "1.11602px solid rgba(255, 255, 255, 0.2)",
+    border: "2px solid rgba(255, 255, 255, 0.2)",
     animation: `fade1 1s linear 0s infinite`,
   },
   ".circle1": {
     width: 404,
     height: 404,
-    border: "1.11602px solid rgba(255, 255, 255, 0.2)",
+    border: "2px solid rgba(255, 255, 255, 0.2)",
     animation: `fade2 1s linear 0s infinite`,
   },
   ".circle2": {
     width: 325,
     height: 325,
-    border: "1.11602px solid rgba(255, 255, 255, 0.2)",
+    border: "2px solid rgba(255, 255, 255, 0.2)",
     animation: `fade3 1s linear 0s infinite`,
   },
   ".circle3": {
     width: 263,
     height: 263,
-    border: "1.11602px solid rgba(255, 255, 255, 0.2)",
+    border: "2px solid rgba(255, 255, 255, 0.2)",
     animation: `fade4 1s linear 0s infinite`,
   },
   [theme.breakpoints.down("sm")]: {
@@ -64,19 +64,19 @@ const ArtistiImg = styled(Box)(({ theme }) => ({
   },
   "@keyframes fade1": {
     "0%": {
-      border: "1.11602px solid rgba(255, 255, 255, 0.4)",
+      border: "2px solid rgba(255, 255, 255, 0.4)",
     },
     "25%": {
-      border: "1.11602px solid rgba(255, 255, 255, 0.3)",
+      border: "2px solid rgba(255, 255, 255, 0.3)",
     },
     "50%": {
-      border: "1.11602px solid rgba(255, 255, 255, 0.2)",
+      border: "2px solid rgba(255, 255, 255, 0.2)",
     },
     "75%": {
-      border: "1.11602px solid rgba(255, 255, 255, 0.15)",
+      border: "2px solid rgba(255, 255, 255, 0.15)",
     },
     "100%": {
-      border: "1.11602px solid rgba(255, 255, 255, 0.1)",
+      border: "2px solid rgba(255, 255, 255, 0.1)",
     },
   },
   "@keyframes fade2": {

@@ -18,7 +18,7 @@ export default function ProductInfo({
         result = `translate3D(0, ${(1 - Number(animationRatio)) * 100}vh, 0)`;
         break;
       case AnimateStep.leave:
-        result = `translate3D(-${Number(animationRatio) * 100}vw, 0, 0)`;
+        result = `translate3D(-${Number(animationRatio) * 100}%, 0, 0)`;
         break;
     }
     return result;

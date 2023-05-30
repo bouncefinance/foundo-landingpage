@@ -52,6 +52,7 @@ const Necklace = ({
         transform: `translate3D(-50%, -${
           animationRatio ? Number(animationRatio) * 50 : 0
         }%, 0) scale(${1 - Number(animationRatio) * 0.55})`,
+        zIndex: 99,
         ...style,
       }}
     ></lottie-player>

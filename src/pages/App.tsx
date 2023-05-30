@@ -6,6 +6,7 @@ import TokenDetail from "./detail";
 import { Box } from "@mui/material";
 import Header from "components/Header";
 import LeftBar from 'components/LeftBar'
+import 'react-toastify/dist/ReactToastify.css'
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {

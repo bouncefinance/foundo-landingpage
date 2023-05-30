@@ -7,7 +7,7 @@ import DiamondIcon from "assets/img/D1.png";
 import DiamondBackIcon from "assets/img/D2.png";
 import CenterSection from "components/CenterSection";
 import { useIsSMDown } from "../../../theme/useTheme";
-
+import EmailDialog from "pages/detail/emailDialog";
 const StarBtn = styled(Box)(({ theme }) => ({
   color: "rgba(255, 255, 255, 0.8)",
   border: "1px solid rgba(255, 255, 255, 0.8)",
@@ -37,7 +37,7 @@ const StarBtn = styled(Box)(({ theme }) => ({
 const GoAuctionBtn = styled(StarBtn)(() => ({
   fontSize: "94px",
   fontStyle: "italic",
-  width: "100%",
+  width: "80%",
   maxWidth: "1200px",
   height: "130px",
   lineHeight: "130px",
@@ -178,6 +178,10 @@ export default function Footer() {
       setIsWaiting(false);
     },
   });
+  const [emailDialog, setEmailDialog] = useState(false);
+  const closeDialog = () => {
+    setEmailDialog(false);
+  };
   const timeTypes = ["DAY", ":", "HRS", ":", "MIN", ":", "SEC"];
   return (
     <Box
@@ -250,7 +254,8 @@ export default function Footer() {
               </Typography>
               <StarBtn
                 onClick={() => {
-                  setIsWaiting(false);
+                  //   setIsWaiting(false);
+                  setEmailDialog(true);
                 }}
               >
                 STAY TUNED !
@@ -528,6 +533,7 @@ export default function Footer() {
           )}
         </>
       </CenterSection>
+      {emailDialog && <EmailDialog handleClose={closeDialog} />}
     </Box>
   );
 }
