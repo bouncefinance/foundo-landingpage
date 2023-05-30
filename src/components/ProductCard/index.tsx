@@ -17,7 +17,7 @@ export default function ProductCard({
   hideProductImg?: boolean;
   hideProduct?: boolean;
 }) {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const config = [
     {
       text: "Gemstone: Diamonds",
@@ -44,8 +44,8 @@ export default function ProductCard({
     <Box
       sx={{
         position: "relative",
-        width: isMd ? "258px" : "458px",
-        height: isMd ? "360px" : "640px",
+        width: isSm ? "258px" : "458px",
+        height: isSm ? "360px" : "640px",
         background: "rgba(73, 73, 73, 0.11)",
         border: "2px solid rgba(255, 255, 255, 0.2)",
         backdropFilter: "blur(1px)",
@@ -60,13 +60,13 @@ export default function ProductCard({
           flexFlow: "row nowrap",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: isMd ? "26px" : "37px",
+          marginBottom: isSm ? "26px" : "37px",
         }}
       >
         <Typography
           sx={{
             fontWeight: 500,
-            fontSize: isMd ? "14px" : "16px",
+            fontSize: isSm ? "14px" : "16px",
           }}
         >
           Details
@@ -75,13 +75,13 @@ export default function ProductCard({
           src={LineImg}
           alt=""
           style={{
-            height: isMd ? "8px" : "16px",
+            height: isSm ? "8px" : "16px",
           }}
         />
         <Typography
           sx={{
             fontWeight: 500,
-            fontSize: isMd ? "14px" : "16px",
+            fontSize: isSm ? "14px" : "16px",
           }}
         >
           Ref: 356934
@@ -90,12 +90,12 @@ export default function ProductCard({
       <Grid container rowSpacing={"8px"}>
         {config.map((item, index) => {
           return (
-            <Grid key={index} item xs={isMd ? 12 : 6}>
+            <Grid key={index} item xs={isSm ? 12 : 6}>
               <Box
                 sx={{
                   display: "flex",
                   flexFlow: "row nowrap",
-                  justifyContent: isMd
+                  justifyContent: isSm
                     ? "flex-start"
                     : (index + 1) % 2 === 0
                     ? "flex-end"
@@ -116,7 +116,7 @@ export default function ProductCard({
                   sx={{
                     fontFamily: `'Inter'`,
                     color: "#959595",
-                    fontSize: isMd ? "14px" : "16px",
+                    fontSize: isSm ? "14px" : "16px",
                   }}
                 >
                   {item.text}
@@ -129,10 +129,10 @@ export default function ProductCard({
       <img
         src={ProdIcon}
         style={{
-          position: isMd ? "absolute" : "relative",
-          top: isMd ? "93px" : "0",
-          width: isMd ? 250 : 420,
-          height: isMd ? 250 : 420,
+          position: isSm ? "absolute" : "relative",
+          top: isSm ? "93px" : "0",
+          width: isSm ? 250 : 420,
+          height: isSm ? 250 : 420,
           objectFit: "contain",
           opacity: hideProductImg ? 0 : 1,
           overflow: "hidden",
@@ -143,9 +143,9 @@ export default function ProductCard({
         src={Logo}
         style={{
           position: "absolute",
-          width: isMd ? 33 : 58,
-          left: isMd ? 16 : 24,
-          bottom: isMd ? 24 : 27,
+          width: isSm ? 33 : 58,
+          left: isSm ? 16 : 24,
+          bottom: isSm ? 24 : 27,
           cursor: "pointer",
         }}
         alt=""
@@ -154,9 +154,9 @@ export default function ProductCard({
         src={Icon6}
         style={{
           position: "absolute",
-          width: isMd ? 24 : 44,
-          right: isMd ? 16 : 24,
-          bottom: isMd ? 24 : 30,
+          width: isSm ? 24 : 44,
+          right: isSm ? 16 : 24,
+          bottom: isSm ? 24 : 30,
         }}
         alt=""
       />

@@ -26,7 +26,7 @@ const StarBtn = styled(Box)(({ theme }) => ({
     color: "#000",
     transform: "scale(1.03)",
   },
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("sm")]: {
     height: "30px",
     lineHeight: "30px",
     borderRadius: "15px",
@@ -80,7 +80,7 @@ const FlickerText = styled(Typography)(({ theme }) => ({
       borderBottom: "8px solid #D7D6D9",
     },
   },
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("sm")]: {
     paddingRight: "15px",
     "&:after": {
       width: "10px",
@@ -104,7 +104,7 @@ const FlickerText = styled(Typography)(({ theme }) => ({
   },
 }));
 function SlideSection() {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const [isHover, setIsHover] = useState(false);
   const imgList = useMemo(() => {
     return isHover
@@ -115,8 +115,8 @@ function SlideSection() {
     <Box
       sx={{
         width: "100vw",
-        marginTop: isMd ? "64px" : "120px",
-        marginBottom: isMd ? "80px" : "118px",
+        marginTop: isSm ? "64px" : "120px",
+        marginBottom: isSm ? "80px" : "118px",
       }}
       onMouseEnter={() => {
         setIsHover(true);
@@ -148,7 +148,7 @@ function SlideSection() {
             },
           },
         }}
-        gap={isMd ? "30px" : "100px"}
+        gap={isSm ? "30px" : "100px"}
       >
         {imgList.map((item, index) => {
           return (
@@ -156,8 +156,8 @@ function SlideSection() {
               src={item}
               style={{
                 display: "block",
-                width: isMd ? "41px" : "93px",
-                height: isMd ? "64px" : "146px",
+                width: isSm ? "41px" : "93px",
+                height: isSm ? "64px" : "146px",
                 cursor: "pointer",
               }}
               key={"img" + index}
@@ -170,7 +170,7 @@ function SlideSection() {
   );
 }
 export default function Footer() {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const [isWaiting, setIsWaiting] = useState<boolean>(true);
   const [countdown, { days, hours, minutes, seconds }] = useCountDown({
     targetDate: moment("2023-07-1", "YYYY-MM-DD").valueOf(),
@@ -194,26 +194,26 @@ export default function Footer() {
             flexFlow: "column nowrap",
             justifyContent: "center",
             alignItems: "center",
-            paddingBottom: isMd ? "64px" : "240px",
+            paddingBottom: isSm ? "64px" : "240px",
             borderBottom: "1px solid #626262",
-            marginBottom: isMd ? "64px" : "120px",
+            marginBottom: isSm ? "64px" : "120px",
           }}
         >
           <>
             <Typography
               sx={{
-                maxWidth: isMd ? "100%" : "950px",
+                maxWidth: isSm ? "100%" : "950px",
                 margin: "0 auto",
                 fontWeight: 600,
-                fontSize: isMd ? "24px" : "80px",
-                lineHeight: isMd ? "17px" : "58px",
+                fontSize: isSm ? "24px" : "80px",
+                lineHeight: isSm ? "17px" : "58px",
                 textAlign: "center",
-                marginBottom: isMd ? "16px" : "30px",
+                marginBottom: isSm ? "16px" : "30px",
               }}
             >
               ENGLISH AUCTION
             </Typography>
-            {isMd && (
+            {isSm && (
               <Typography
                 sx={{
                   fontWeight: 600,
@@ -241,12 +241,12 @@ export default function Footer() {
               <Typography
                 sx={{
                   fontWeight: 600,
-                  fontSize: isMd ? "24px" : "80px",
-                  lineHeight: isMd ? "17px" : "58px",
+                  fontSize: isSm ? "24px" : "80px",
+                  lineHeight: isSm ? "17px" : "58px",
                   textAlign: "center",
                 }}
               >
-                {isMd ? "S" : "COMING S"}
+                {isSm ? "S" : "COMING S"}
               </Typography>
               <StarBtn
                 onClick={() => {
@@ -257,10 +257,10 @@ export default function Footer() {
               </StarBtn>
               <FlickerText
                 sx={{
-                  maxWidth: isMd ? "100%" : "950px",
+                  maxWidth: isSm ? "100%" : "950px",
                   fontWeight: 600,
-                  fontSize: isMd ? "24px" : "80px",
-                  lineHeight: isMd ? "17px" : "58px",
+                  fontSize: isSm ? "24px" : "80px",
+                  lineHeight: isSm ? "17px" : "58px",
                   textAlign: "center",
                 }}
               >
@@ -280,7 +280,7 @@ export default function Footer() {
               <Typography
                 sx={{
                   fontWeight: 600,
-                  lineHeight: isMd ? "16px" : "24px",
+                  lineHeight: isSm ? "16px" : "24px",
                   fontSize: "20px",
                   color: "#fff",
                 }}
@@ -301,7 +301,7 @@ export default function Footer() {
               <Typography
                 sx={{
                   fontWeight: 600,
-                  fontSize: isMd ? "16px" : "20px",
+                  fontSize: isSm ? "16px" : "20px",
                   color: "#fff",
                   lineHeight: "24px",
                 }}
@@ -341,14 +341,14 @@ export default function Footer() {
                   sx={{
                     fontFamily: `'Public Sans'`,
                     fontWeight: 600,
-                    fontSize: isMd ? "24px" : "80px",
+                    fontSize: isSm ? "24px" : "80px",
                     leadingTrim: "both",
                     textEdge: "cap",
                     textAlign: "center",
                     textTransform: "uppercase",
                     fontFeatureSettings: `'pnum' on, 'lnum' on`,
                     color: "#D7D6D9",
-                    margin: isMd ? "0 10px" : "0 20px",
+                    margin: isSm ? "0 10px" : "0 20px",
                   }}
                 >
                   :
@@ -371,7 +371,7 @@ export default function Footer() {
                     sx={{
                       fontFamily: `'Public Sans'`,
                       fontWeight: 600,
-                      fontSize: isMd ? "24px" : "80px",
+                      fontSize: isSm ? "24px" : "80px",
                       leadingTrim: "both",
                       textEdge: "cap",
                       textAlign: "center",
@@ -382,9 +382,9 @@ export default function Footer() {
                   >
                     {index === 0
                       ? days
-                      : index === 1
-                      ? hours
                       : index === 2
+                      ? hours
+                      : index === 4
                       ? minutes
                       : seconds}
                   </Typography>
@@ -392,7 +392,7 @@ export default function Footer() {
                     sx={{
                       fontFamily: `'Public Sans'`,
                       fontWeight: 600,
-                      fontSize: isMd ? "16px" : "20px",
+                      fontSize: isSm ? "16px" : "20px",
                       color: "#959595",
                     }}
                   >
@@ -407,12 +407,12 @@ export default function Footer() {
       <SlideSection />
       <CenterSection
         style={{
-          paddingBottom: isMd ? "24px" : "40px",
-          flexFlow: isMd ? "column nowrap" : "row nowrap",
+          paddingBottom: isSm ? "24px" : "40px",
+          flexFlow: isSm ? "column nowrap" : "row nowrap",
         }}
       >
         <>
-          {!isMd && (
+          {!isSm && (
             <>
               <Typography
                 component={"a"}
@@ -468,7 +468,7 @@ export default function Footer() {
               </Box>
             </>
           )}
-          {isMd && (
+          {isSm && (
             <>
               <Box
                 sx={{

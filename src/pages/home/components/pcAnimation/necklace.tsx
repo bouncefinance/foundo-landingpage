@@ -1,5 +1,6 @@
 import NecklaceJson from "assets/lottie/animatinDm4.json";
 import { create } from "@lottiefiles/lottie-interactivity";
+
 import { useEffect, useRef } from "react";
 import { useIsSMDown } from "../../../../theme/useTheme";
 require("@lottiefiles/lottie-player");
@@ -11,26 +12,28 @@ const Necklace = ({
   style?: React.CSSProperties;
   animationRatio?: string;
 }) => {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const lottieEl = useRef<any>(null);
   useEffect(() => {
-    const lottieIdEl = document.getElementById('lottie-player')
-    if ((lottieEl !== null && lottieEl?.current) || lottieIdEl) {
-      //   const totalFrames = lottieEl.current?.getLottie()?.totalFrames;
-      //   console.log("lottieEl>>>", lottieEl.current, totalFrames);
+    const lottieIdEl = document.getElementById("lottie-player");
+    if (lottieIdEl && lottieIdEl !== undefined) {
       // 4. configure the interactivity library
-      create({
-        mode: "scroll",
-        player: lottieIdEl || "#lottie-player",
-        container: "#animation1",
-        actions: [
-          {
-            visibility: [0, 1],
-            type: "seek",
-            frames: [0, 128],
-          },
-        ],
-      });
+      try {
+        create({
+          mode: "scroll",
+          player: lottieIdEl || "#lottie-player",
+          container: "#animation1",
+          actions: [
+            {
+              visibility: [0, 1],
+              type: "seek",
+              frames: [0, 128],
+            },
+          ],
+        });
+      } catch (error) {
+        console.error('create lottie error')
+      }
     }
   }, []);
   return (
@@ -43,8 +46,8 @@ const Necklace = ({
       style={{
         position: "fixed",
         top: `${animationRatio ? Number(animationRatio) * 50 : 0}%`,
-        width: isMd ? "100%" : "400px",
-        height: isMd ? "100%" : "500px",
+        width: isSm ? "80%" : "400px",
+        height: isSm ? "auto" : "500px",
         left: "50%",
         transform: `translate3D(-50%, -${
           animationRatio ? Number(animationRatio) * 50 : 0

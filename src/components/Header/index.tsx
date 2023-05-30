@@ -31,7 +31,7 @@ const LinkItem = styled(Box)(() => ({
   },
 }));
 export default function Header() {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const menuList = [
     {
       title: "TOKEN DETAILS",
@@ -73,7 +73,7 @@ export default function Header() {
               alt={"Bounce"}
             />
           </Link>
-          {!isMd && (
+          {!isSm && (
             <Box
               sx={{
                 display: "flex",

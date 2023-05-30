@@ -7,7 +7,7 @@ import Icon5 from "assets/img/icon5.png";
 import { useIsSMDown } from "../../theme/useTheme";
 
 export default function FundoInfo() {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const config = [
     {
       label: "Gemstone",
@@ -39,13 +39,13 @@ export default function FundoInfo() {
     <Box
       sx={{
         position: "relative",
-        width: isMd ? "280px" : "550px",
-        minWidth: isMd ? "280px" : "550px",
-        minHeight: isMd ? "unset" : "640px",
+        width: isSm ? "280px" : "550px",
+        minWidth: isSm ? "280px" : "550px",
+        minHeight: isSm ? "unset" : "640px",
         paddingTop: "26px",
         "&:after": {
           content: `''`,
-          display: isMd ? "none" : "block",
+          display: isSm ? "none" : "block",
           position: "absolute",
           bottom: 0,
           left: 0,
@@ -58,9 +58,9 @@ export default function FundoInfo() {
       <Typography
         sx={{
           fontWeight: 600,
-          fontSize: isMd ? "24px" : "64px",
+          fontSize: isSm ? "24px" : "64px",
           lineHeight: "46px",
-          marginBottom: isMd ? "32px" : "40px",
+          marginBottom: isSm ? "32px" : "40px",
         }}
       >
         Foundo Name
@@ -76,17 +76,17 @@ export default function FundoInfo() {
       >
         <Typography
           sx={{
-            fontWeight: isMd ? 600 : 500,
-            fontSize: isMd ? "13px" : "16px",
-            color: isMd ? "D7D6D9" : "#959595",
+            fontWeight: isSm ? 600 : 500,
+            fontSize: isSm ? "13px" : "16px",
+            color: isSm ? "D7D6D9" : "#959595",
           }}
         >
           Details
         </Typography>
         <Typography
           sx={{
-            fontWeight: isMd ? 600 : 500,
-            fontSize: isMd ? "14px" : "16px",
+            fontWeight: isSm ? 600 : 500,
+            fontSize: isSm ? "14px" : "16px",
           }}
         >
           Ref: 356934
@@ -114,8 +114,8 @@ export default function FundoInfo() {
               <img
                 src={item.img}
                 style={{
-                  width: isMd ? "16px" : "20px",
-                  height: isMd ? "16px" : "20px",
+                  width: isSm ? "16px" : "20px",
+                  height: isSm ? "16px" : "20px",
                   marginRight: "8px",
                 }}
                 alt=""
@@ -123,7 +123,7 @@ export default function FundoInfo() {
               <Typography
                 sx={{
                   fontWeight: 500,
-                  fontSize: isMd ? "13px" : "16px",
+                  fontSize: isSm ? "13px" : "16px",
                   color: "#959595",
                 }}
               >
@@ -133,7 +133,7 @@ export default function FundoInfo() {
             <Typography
               sx={{
                 fontWeight: 500,
-                fontSize: isMd ? "14px" : "16px",
+                fontSize: isSm ? "14px" : "16px",
               }}
             >
               {item.value}
@@ -144,7 +144,7 @@ export default function FundoInfo() {
       <Typography
         sx={{
           fontWeight: 500,
-          fontSize: isMd ? "13px" : "16px",
+          fontSize: isSm ? "13px" : "16px",
           color: "#959595",
         }}
       >
@@ -153,7 +153,7 @@ export default function FundoInfo() {
       <Typography
         sx={{
           fontWeight: 500,
-          fontSize: isMd ? "14px" : "16px",
+          fontSize: isSm ? "14px" : "16px",
           color: "#959595",
         }}
       >

@@ -1,12 +1,7 @@
 import { Typography } from "@mui/material";
 import CenterSection from "components/CenterSection";
 import { useMemo } from "react";
-
-export enum AnimateStep {
-  "notShow" = 0,
-  "enterLeft" = 1,
-  "leaveUp" = 2,
-}
+import { AnimateStep } from "pages/home/components/pcAnimation/threeCard";
 export default function TextAnimate({
   animationRatio,
   step,
@@ -17,13 +12,13 @@ export default function TextAnimate({
   const transformStr = useMemo(() => {
     let result = "translate3D(0, 0, 0)";
     switch (step) {
-      case AnimateStep.enterLeft:
+      case AnimateStep.enter:
         result = `translate3D(${100 - Number(animationRatio) * 100}%, 0, 0)`;
         break;
-      case AnimateStep.leaveUp:
-        result = `translate3D(${0 -
-          (Number(animationRatio) * 100)
-        }%, -${Number(animationRatio) * 100}vh, 0)`;
+      case AnimateStep.leave:
+        result = `translate3D(${0 - Number(animationRatio) * 100}%, -${
+          Number(animationRatio) * 100
+        }vh, 0)`;
         break;
     }
     return result;

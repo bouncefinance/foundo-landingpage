@@ -41,7 +41,7 @@ const ArtistiImg = styled(Box)(({ theme }) => ({
     border: "1.11602px solid rgba(255, 255, 255, 0.2)",
     animation: `fade4 1s linear 0s infinite`,
   },
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("sm")]: {
     width: 217,
     height: 217,
     margin: "0 auto 12px",
@@ -132,13 +132,13 @@ const ArtistiImg = styled(Box)(({ theme }) => ({
   },
 }));
 export default function ProductCard() {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   return (
     <Box
       sx={{
         position: "relative",
-        width: isMd ? "258px" : "458px",
-        height: isMd ? "360px" : "640px",
+        width: isSm ? "258px" : "458px",
+        height: isSm ? "360px" : "640px",
         background: "rgba(73, 73, 73, 0.11)",
         border: "2px solid rgba(255, 255, 255, 0.2)",
         backdropFilter: "blur(11px)",
@@ -152,7 +152,7 @@ export default function ProductCard() {
           flexFlow: "row nowrap",
           justifyContent: "space-between",
           alignItems: "ceneter",
-          marginBottom: isMd ? "15px" : "37px",
+          marginBottom: isSm ? "15px" : "37px",
         }}
       >
         <Typography
@@ -181,8 +181,8 @@ export default function ProductCard() {
       <Typography
         sx={{
           fontWeight: 600,
-          fontSize: isMd ? "16px" : "20px",
-          marginBottom: isMd ? "0px" : "16px",
+          fontSize: isSm ? "16px" : "20px",
+          marginBottom: isSm ? "0px" : "16px",
           lineHeight: "28px",
         }}
       >
@@ -191,7 +191,7 @@ export default function ProductCard() {
       <Typography
         sx={{
           fontWeight: 700,
-          fontSize: isMd ? "24px" : "44px",
+          fontSize: isSm ? "24px" : "44px",
           marginBottom: "16px",
           lineHeight: "32px",
         }}

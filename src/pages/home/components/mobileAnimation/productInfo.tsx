@@ -2,12 +2,7 @@ import ProductCard from "../../../../components/ProductCard";
 import { Box } from "@mui/material";
 import { useMemo } from "react";
 import { useIsSMDown } from "../../../../theme/useTheme";
-
-export enum AnimateStep {
-  "notShow" = 0,
-  "enterUp" = 1,
-  "leaveLeft" = 2,
-}
+import { AnimateStep } from "pages/home/components/pcAnimation/threeCard";
 export default function ProductInfo({
   animationRatio,
   step,
@@ -15,14 +10,14 @@ export default function ProductInfo({
   animationRatio?: string;
   step: AnimateStep;
 }) {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const transformStr = useMemo(() => {
     let result = "translate3D(0, 0, 0)";
     switch (step) {
-      case AnimateStep.enterUp:
+      case AnimateStep.enter:
         result = `translate3D(0, ${(1 - Number(animationRatio)) * 100}vh, 0)`;
         break;
-      case AnimateStep.leaveLeft:
+      case AnimateStep.leave:
         result = `translate3D(-${Number(animationRatio) * 100}vw, 0, 0)`;
         break;
     }
@@ -37,8 +32,8 @@ export default function ProductInfo({
         position: "fixed",
         top: "50%",
         left: "50%",
-        marginTop: isMd ? "-180px" : "-320px",
-        marginLeft: isMd ? "-129px" : "-229px",
+        marginTop: isSm ? "-180px" : "-320px",
+        marginLeft: isSm ? "-129px" : "-229px",
         transform: transformStr,
         display: "flex",
         flexFlow: "row nowrap",
@@ -51,13 +46,13 @@ export default function ProductInfo({
       <Box
         sx={{
           position: "relative",
-          width: isMd ? "280px" : "550px",
+          width: isSm ? "280px" : "550px",
         }}
       ></Box>
       <Box
         sx={{
           position: "relative",
-          width: isMd ? "258px" : "458px",
+          width: isSm ? "258px" : "458px",
         }}
       ></Box>
     </Box>

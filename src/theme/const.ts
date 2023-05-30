@@ -4,15 +4,12 @@
  */
 export const BREAKPOINTS = {
     values: {
-      xs: 0,
-      sm: 576,
-      md: 768,
-      lg: 1000,
-      xl: 1200,
-      xxl: 1264,
-      HD: 1366,
-      WXGAPlus: 1440,
-      HDPlus: 1600,
+      xs: 576,
+      sm: 768,
+      md: 1440,
+      lg: 1920,
+      xl:2560,
+      xxl: 3840,
     },
   };
 

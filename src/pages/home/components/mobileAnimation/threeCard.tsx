@@ -1,14 +1,15 @@
 import ProductCard from "../../../../components/ProductCard";
 import FundoInfo from "../../../../components/FundoInfo";
 import ArtistCard from "../../../../components/ArtistCard";
+import ArtistInfo from "../../../../components/ArtistInfo";
 import { Box } from "@mui/material";
 import { useMemo } from "react";
-import { useIsSMDown } from "../../../../theme/useTheme";
 
 export enum AnimateStep {
   "notShow" = 0,
-  "enterLeft" = 1,
-  "leaveUp" = 2,
+  "enter" = 1,
+  "leave" = 2,
+  "rotate" = 3, // only partner component use this status
 }
 export default function ThreeCard({
   animationRatio,
@@ -17,15 +18,14 @@ export default function ThreeCard({
   animationRatio?: string;
   step: AnimateStep;
 }) {
-  const isMd = useIsSMDown();
   const transformStr = useMemo(() => {
     let result = "translate3D(0, 0, 0)";
     switch (step) {
-      case AnimateStep.enterLeft:
-        result = `translate3D(-${Number(animationRatio) * 100}vw, 0, 0)`;
+      case AnimateStep.enter:
+        result = `translate3D(0, -${Number(animationRatio) * 50}vh, 0)`;
         break;
-      case AnimateStep.leaveUp:
-        result = `translate3D(-100%, -${Number(animationRatio) * 100}vh, 0)`;
+      case AnimateStep.leave:
+        result = `translate3D(0, -${(Number(animationRatio) * 300) + 50}vh, 0)`;
         break;
     }
     return result;
@@ -34,21 +34,22 @@ export default function ThreeCard({
     <Box
       style={{
         position: "fixed",
-        top: "50%",
-        left: "50%",
-        marginTop: isMd ? "-180px" : "-320px",
-        marginLeft: isMd ? "-129px" : "-229px",
+        width:'100vw',
+        top: "100%",
+        left: "0",
+        marginTop:'-180px',
         transform: transformStr,
         display: "flex",
-        flexFlow: "row nowrap",
+        flexFlow: "column nowrap",
         justifyContent: "flex-start",
         alignItems: "center",
       }}
-      gap={"120px"}
+      gap={"96px"}
     >
-      <ProductCard hideProduct={true} />
+      <ProductCard hideProduct={false} />
       <FundoInfo />
       <ArtistCard />
+      <ArtistInfo />
     </Box>
   );
 }

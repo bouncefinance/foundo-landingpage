@@ -25,7 +25,7 @@ const LoopColumn = styled(Box)(() => ({
   },
 }));
 export default function LeftBar() {
-  const isMd = useIsSMDown();
+  const isSm = useIsSMDown();
   const imgList = [
     {
       src: LeftP1,
@@ -96,7 +96,7 @@ export default function LeftBar() {
       sx={{
         position: "fixed",
         top: 0,
-        left: isMd ? 0 : 30,
+        left: isSm ? 0 : 30,
         width: "18px",
         height: "100vh",
         zIndex: 1,

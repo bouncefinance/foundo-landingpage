@@ -7,6 +7,7 @@ export default function oneMobile() {
   return (
     <CenterSection
       style={{
+        position: "relative",
         width: "100%",
         height: "100vh",
         minHeight: "700px",
@@ -95,11 +96,13 @@ export default function oneMobile() {
             right: "0",
           }}
         />
-        <FixedLeft style={{
+        <FixedLeft
+          style={{
             width: "90px",
             top: "100px",
             left: "0",
-          }}/>
+          }}
+        />
       </>
     </CenterSection>
   );

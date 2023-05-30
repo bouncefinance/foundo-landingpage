@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import P1 from "assets/img/banenrP1.png";
+import BackVideo from 'assets/video/backVideo.mp4'
+
 export default function FixedLeft({ style }: { style?: React.CSSProperties }) {
   return (
     <Box
@@ -14,17 +15,27 @@ export default function FixedLeft({ style }: { style?: React.CSSProperties }) {
         flexFlow: "column nowrap",
         justifyContent: "flex-start",
         alignContent: "center",
-        ...style
+        ...style,
       }}
     >
-      <img
-        src={P1}
-        alt=""
+      <video
         style={{
+          position: "relative",
           width: "100%",
+          height: "100%",
           marginBottom: "15px",
+          objectFit: "cover",
         }}
-      />
+        auto-pause-if-navigate="true"
+        playsInline
+        webkit-playsinline=""
+        x5-playsinline=""
+        x-webkit-airplay="allow"
+        muted
+        loop
+        autoPlay
+        src={BackVideo}
+      ></video>
       <Typography
         sx={{
           fontFamily: `'Inter'`,

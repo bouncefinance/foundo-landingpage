@@ -10,7 +10,7 @@ export default function FixedIndex({ style }: { style?: React.CSSProperties }) {
         position: "absolute",
         width: "73px",
         top: "40%",
-        right: "-20px",
+        right: "0",
         transform: "translate3D(0, -40%,0)",
         zIndex: 997,
         display: "flex",
