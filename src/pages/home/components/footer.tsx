@@ -134,7 +134,7 @@ function SlideSection() {
           flexFlow: "row nowrap",
           justifyContent: "flex-start",
           alignItems: "center",
-          animation: `toLeft 24s infinite linear`,
+          animation: `toLeft 18s infinite linear`,
           AnimationPlayState: "running",
           "&:hover": {
             animationPlayState: "paused",

@@ -19,6 +19,7 @@ export default function One() {
         <Typography
           sx={{
             width: "100%",
+            fontFamily: `'Public Sans'`,
             fontStyle: "italic",
             fontWeight: 100,
             fontSize: "130px",
@@ -34,9 +35,11 @@ export default function One() {
         <Typography
           sx={{
             width: "100%",
+            fontFamily: `'Public Sans'`,
             fontWeight: 600,
             fontSize: "110px",
             textAlign: "left",
+            whiteSpace:'nowrap',
             height: "80px",
             lineHeight: "80px",
             color: "#959595",

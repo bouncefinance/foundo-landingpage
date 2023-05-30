@@ -24,7 +24,7 @@ export default function ProductInfo({
     return result;
   }, [step, animationRatio]);
   const hideProductImg = useMemo(() => {
-    return step === 1 && Number(animationRatio) < 1;
+    return step === 1 && Number(animationRatio) < 0.9;
   }, [step, animationRatio]);
   return (
     <Box

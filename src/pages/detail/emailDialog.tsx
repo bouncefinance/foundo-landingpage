@@ -3,7 +3,6 @@ import EmailIcon from "assets/img/email.png";
 import CloseIcon from "assets/img/mobile/x.svg";
 import { useIsSMDown } from "../../theme/useTheme";
 import SendBtn from "assets/img/sendEmail.svg";
-import EmailBg from "assets/img/emailBg.png";
 const InputEl = styled("input")(({ theme }) => ({
   textDecoration: "none",
   width: "100%",
@@ -46,10 +45,6 @@ export default function EmailDialog({
       <Box
         sx={{
           position: "relative",
-          background: isSm ? "" : `url(${EmailBg})`,
-          backgroundRepeat: "repeat-x",
-          backgroundPosition: "bottom",
-          backgroundSize: "100% auto",
           backgroundColor: "rgba(0,0,0, 0.7)",
           width: "100%",
           height: "100%",
@@ -103,6 +98,7 @@ export default function EmailDialog({
               justifyContent: "space-between",
               alignItems: "flex-start",
             }}
+            gap={"40px"}
           >
             <Typography
               sx={{

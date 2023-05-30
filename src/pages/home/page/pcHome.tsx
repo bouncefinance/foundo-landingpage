@@ -15,9 +15,12 @@ import Necklace from "../components/pcAnimation/necklace";
 import { BigNumber } from "bignumber.js";
 const PcHome: React.FC = () => {
   const _AnimateHeight1 = 1000;
+  const [stopScroll, setStopscroll] = useState(true);
   // 1. necklack
   const [animate1Ratio, setAnimate1Ratio] = useState<string>("0");
   const [animate1Show, setAnimate1Show] = useState<boolean>(true);
+  // necklace only run animation once when page loaded
+  const [onceAnimation, setOnceAnimation] = useState<boolean>(false);
   // 2.product info
   const [animate2Ratio, setanimate2Ratio] = useState<string>("0");
   const [animate2Step, setanimate2Step] = useState<AnimateStep>(0);
@@ -36,6 +39,10 @@ const PcHome: React.FC = () => {
     setWinHeight(window.innerHeight);
   };
   useEffect(() => {
+    setTimeout(() => {
+      setStopscroll(false);
+      setOnceAnimation(true)
+    }, 3000);
     window.addEventListener("resize", resizeWinH);
     return () => {
       window.removeEventListener("resize", resizeWinH);
@@ -55,13 +62,13 @@ const PcHome: React.FC = () => {
       let animate3range = [_AnimateHeight1 + 2000, _AnimateHeight1 + 2800];
       // 4 NFT ISSUED & BY FOUNDO enter slide
       let animate4range = [
-        _AnimateHeight1 + 2800 + winH + (winH / 2),
-        _AnimateHeight1 + 2800 + winH + (winH / 2) + 800,
+        _AnimateHeight1 + 2800 + winH + winH / 2,
+        _AnimateHeight1 + 2800 + winH + winH / 2 + 800,
       ];
       // 5 NFT ISSUED & BY FOUNDO leave up
       let animate5range = [
-        _AnimateHeight1 + 2800 + winH + (winH / 2) + 800,
-        _AnimateHeight1 + 2800 + winH + (winH / 2) + 1600,
+        _AnimateHeight1 + 2800 + winH + winH / 2 + 800,
+        _AnimateHeight1 + 2800 + winH + winH / 2 + 1600,
       ];
       // 6 partner enter animation
       let animate6range = [
@@ -100,6 +107,12 @@ const PcHome: React.FC = () => {
           .toFixed(2);
         setanimate2Ratio(Number(raiod) >= 0.95 ? "1" : raiod);
         setanimate2Step(AnimateStep.enter);
+        setanimate2_1Ratio(
+          BigNumber(event.target.scrollTop - animate2_1range[0])
+            .div(animate2_1range[1] - animate2_1range[0])
+            .toFixed(2)
+        );
+        setanimate2_1Step(AnimateStep.enter);
       }
       event.target.scrollTop <= animate2range[0] &&
         setanimate2Step(AnimateStep.notShow);
@@ -235,9 +248,9 @@ const PcHome: React.FC = () => {
         position: "relative",
         width: "100%",
         height: "100%",
-        minWidth: '1000px',
+        minWidth: "1000px",
         overflowX: "hidden",
-        overflowY: "auto",
+        overflowY: stopScroll ? "hidden" : "auto",
         backgroundColor: "#000",
         backgroundImage: `url(${BgImg})`,
         backgroundRepeat: "no-repeat",
@@ -267,7 +280,7 @@ const PcHome: React.FC = () => {
       {animate3Step !== AnimateStep.notShow && (
         <ThreeCard step={animate3Step} animationRatio={animate3Ratio} />
       )}
-      {animate1Show && <Necklace animationRatio={animate1Ratio} />}
+      {animate1Show && <Necklace onceAnimation={onceAnimation} animationRatio={animate1Ratio} />}
       <One />
       {/* scroll empty box */}
       <Box

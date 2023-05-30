@@ -19,11 +19,11 @@ export default function NftIssued({
     switch (step) {
       case AnimateStep.enter:
         leftTransform = `translate3D(${
-          (1 - Number(animationRatio)) * 100
-        }vw, 0, 0)`;
+          (1 - Number(animationRatio)) * 50
+        }%, 0, 0)`;
         rightTransform = `translate3D(-${
-          (1 - Number(animationRatio)) * 100
-        }vw, 0, 0)`;
+          (1 - Number(animationRatio)) * 50
+        }%, 0, 0)`;
         break;
       case AnimateStep.leave:
         leftTransform = `translate3D(0, -${Number(animationRatio) * 100}vh, 0)`;
@@ -81,7 +81,7 @@ export default function NftIssued({
             src={D3}
             style={{
               display: "block",
-              width: isSm ? "50px" : "144px",
+              width: isSm ? "50px" : "244px",
             }}
             alt=""
           />
@@ -102,7 +102,7 @@ export default function NftIssued({
             src={D4}
             style={{
               display: "block",
-              width: isSm ? "50px" : "144px",
+              width: isSm ? "50px" : "244px",
             }}
             alt=""
           />

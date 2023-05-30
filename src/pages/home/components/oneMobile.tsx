@@ -9,13 +9,12 @@ export default function oneMobile() {
       style={{
         position: "relative",
         width: "100%",
-        height: "100vh",
-        minHeight: "700px",
+        minHeight: "100vh",
         display: "flex",
         flexFlow: "column nowrap",
         justifyContent: "flex-end",
         alignItems: "center",
-        paddingTop: "540px",
+        paddingTop: "70vh",
       }}
     >
       <>
@@ -93,14 +92,14 @@ export default function oneMobile() {
           style={{
             width: "50px",
             top: "250px",
-            right: "0",
+            right: "20px",
           }}
         />
         <FixedLeft
           style={{
             width: "90px",
             top: "100px",
-            left: "0",
+            left: "20px",
           }}
         />
       </>

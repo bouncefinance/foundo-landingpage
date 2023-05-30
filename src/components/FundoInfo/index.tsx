@@ -43,16 +43,16 @@ export default function FundoInfo() {
         minWidth: isSm ? "280px" : "550px",
         minHeight: isSm ? "unset" : "640px",
         paddingTop: "26px",
-        "&:after": {
-          content: `''`,
-          display: isSm ? "none" : "block",
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: "100%",
-          height: "150px",
-          background: `linear-gradient(2.46deg, #000000 -10.63%, rgba(0, 0, 0, 0.36) 28.27%, rgba(0, 0, 0, 0) 98.37%)`,
-        },
+        // "&:after": {
+        //   content: `''`,
+        //   display: isSm ? "none" : "block",
+        //   position: "absolute",
+        //   bottom: 0,
+        //   left: 0,
+        //   width: "100%",
+        //   height: "150px",
+        //   background: `linear-gradient(2.46deg, #000000 -10.63%, rgba(0, 0, 0, 0.36) 28.27%, rgba(0, 0, 0, 0) 98.37%)`,
+        // },
       }}
     >
       <Typography
@@ -60,7 +60,7 @@ export default function FundoInfo() {
           fontWeight: 600,
           fontSize: isSm ? "24px" : "64px",
           lineHeight: "46px",
-          marginBottom: isSm ? "32px" : "40px",
+          marginBottom: isSm ? "32px" : "20px",
         }}
       >
         Foundo Name
@@ -72,13 +72,14 @@ export default function FundoInfo() {
           flexFlow: "row nowrap",
           justifyContent: "space-between",
           alignItems: "center",
+          borderBottom: "1px solid #343434",
         }}
       >
         <Typography
           sx={{
             fontWeight: isSm ? 600 : 500,
             fontSize: isSm ? "13px" : "16px",
-            color: isSm ? "D7D6D9" : "#959595",
+            color: "#D7D6D9",
           }}
         >
           Details
@@ -102,6 +103,8 @@ export default function FundoInfo() {
               flexFlow: "row nowrap",
               justifyContent: "space-between",
               alignItems: "center",
+              borderBottom:
+                index !== config.length - 1 ? "1px solid #343434" : "",
             }}
           >
             <Box
@@ -146,6 +149,7 @@ export default function FundoInfo() {
           fontWeight: 500,
           fontSize: isSm ? "13px" : "16px",
           color: "#959595",
+          margin: "10px 0",
         }}
       >
         Description
@@ -155,6 +159,7 @@ export default function FundoInfo() {
           fontWeight: 500,
           fontSize: isSm ? "14px" : "16px",
           color: "#959595",
+          fontFamily: `'Inter'`,
         }}
       >
         {`Blossoming between the marvellous monuments of the Eternal City, Fiorever draws inspiration from the alluring four-petal flower that was cherished by the Romans as a symbol of happiness and joy. A blend of two meaningful words: Fiore - Italian for flower, and forever. Fiorever celebrates the Roman love for life with a free-spirited and passionate design. Designed to sparkle with an eternal glow, the precious floral icon is crafted with a corolla of the highest quality diamonds. Fiorever necklace in 18 kt white gold, set with round brilliant-cut diamonds and pavé diamonds.`}

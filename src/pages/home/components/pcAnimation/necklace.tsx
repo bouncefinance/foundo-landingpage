@@ -1,20 +1,36 @@
 import NecklaceJson from "assets/lottie/animatinDm4.json";
 import { create } from "@lottiefiles/lottie-interactivity";
-
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useIsSMDown } from "../../../../theme/useTheme";
-require("@lottiefiles/lottie-player");
 
+require("@lottiefiles/lottie-player");
 const Necklace = ({
   style,
+  onceAnimation,
   animationRatio,
 }: {
   style?: React.CSSProperties;
+  onceAnimation?: boolean;
   animationRatio?: string;
 }) => {
   const isSm = useIsSMDown();
   const lottieEl = useRef<any>(null);
+  const [topNum, setTopNUm] = useState(0);
+  let countTime = 40;
   useEffect(() => {
+    const countdown = setInterval(() => {
+      if (!onceAnimation) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        countTime = countTime - 1;
+        if (countTime >= 0) {
+          setTopNUm(countTime);
+        } else {
+          clearInterval(countdown);
+        }
+      } else {
+        clearInterval(countdown);
+      }
+    }, 75);
     const lottieIdEl = document.getElementById("lottie-player");
     if (lottieIdEl && lottieIdEl !== undefined) {
       // 4. configure the interactivity library
@@ -32,7 +48,7 @@ const Necklace = ({
           ],
         });
       } catch (error) {
-        console.error('create lottie error')
+        console.error("create lottie error");
       }
     }
   }, []);
@@ -46,13 +62,12 @@ const Necklace = ({
       style={{
         position: "fixed",
         top: `${animationRatio ? Number(animationRatio) * 50 : 0}%`,
-        width: isSm ? "80%" : "400px",
-        height: isSm ? "auto" : "500px",
+        width: isSm ? "80%" : "600px",
+        height: isSm ? "auto" : "750px",
         left: "50%",
         transform: `translate3D(-50%, -${
-          animationRatio ? Number(animationRatio) * 50 : 0
+          topNum > 0 ? topNum : animationRatio ? Number(animationRatio) * 50 : 0
         }%, 0) scale(${1 - Number(animationRatio) * 0.55})`,
-        zIndex: 99,
         ...style,
       }}
     ></lottie-player>

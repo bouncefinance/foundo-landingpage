@@ -48,7 +48,7 @@ export default function ProductCard({
         height: isSm ? "360px" : "640px",
         background: "rgba(73, 73, 73, 0.11)",
         border: "2px solid rgba(255, 255, 255, 0.2)",
-        backdropFilter: "blur(1px)",
+        backdropFilter: "blur(25px)",
         borderRadius: "16px",
         opacity: hideProduct ? 0 : 1,
         padding: "26px 19px 0",
@@ -135,6 +135,7 @@ export default function ProductCard({
           height: isSm ? 250 : 420,
           objectFit: "contain",
           opacity: hideProductImg ? 0 : 1,
+          transform:'scale(1.3)',
           overflow: "hidden",
         }}
         alt=""

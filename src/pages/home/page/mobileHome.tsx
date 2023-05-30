@@ -13,9 +13,12 @@ import TextAniamte from "../components/textAnimate";
 import { AnimateStep } from "../components/pcAnimation/threeCard";
 const MobileHome: React.FC = () => {
   const _AnimateHeight1 = 1000;
+  const [stopScroll, setStopscroll] = useState(true);
   // 1. necklack
   const [animate1Ratio, setAnimate1Ratio] = useState<string>("0");
   const [animate1Show, setAnimate1Show] = useState<boolean>(true);
+  // necklace only run animation once when page loaded
+  const [onceAnimation, setOnceAnimation] = useState<boolean>(false);
   // 2.product info
   const [animate2Ratio, setanimate2Ratio] = useState<string>("0");
   const [animate2Step, setanimate2Step] = useState<AnimateStep>(0);
@@ -27,6 +30,10 @@ const MobileHome: React.FC = () => {
     setWinHeight(window.innerHeight);
   };
   useEffect(() => {
+    setTimeout(() => {
+        setStopscroll(false);
+        setOnceAnimation(true)
+      }, 3000);
     window.addEventListener("resize", resizeWinH);
     return () => {
       window.removeEventListener("resize", resizeWinH);
@@ -137,7 +144,7 @@ const MobileHome: React.FC = () => {
         width: "100%",
         height: "100%",
         overflowX: "hidden",
-        overflowY: "auto",
+        overflowY: stopScroll ? "hidden" : "auto",
         backgroundColor: "#000",
         backgroundImage: `url(${MobileBgImg})`,
         backgroundRepeat: "no-repeat",
@@ -158,7 +165,7 @@ const MobileHome: React.FC = () => {
           zIndex: 1,
         }}
       ></Box>
-      {animate1Show && <Necklace animationRatio={animate1Ratio} />}
+      {animate1Show && <Necklace onceAnimation={onceAnimation} animationRatio={animate1Ratio} />}
       {animate2Step !== AnimateStep.notShow && (
         <ThreeCard step={animate2Step} animationRatio={animate2Ratio} />
       )}
