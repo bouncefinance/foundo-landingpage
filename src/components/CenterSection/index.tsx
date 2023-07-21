@@ -1,27 +1,26 @@
-import { Box } from "@mui/material";
+import { Box } from '@mui/material'
 // import { Box, useTheme } from "@mui/material";
-import { useIsSMDown } from "../../theme/useTheme";
+import { useIsSMDown } from '../../theme/useTheme'
 
 interface CenterSectionParams {
-  children?: JSX.Element;
-  style?: React.CSSProperties;
+  children?: JSX.Element
+  style?: React.CSSProperties
 }
 export default function CenterSection(props: CenterSectionParams) {
-  const isSm = useIsSMDown();
+  const isSm = useIsSMDown()
   //   const theme = useTheme();
-  const { children, style } = props;
+  const { children, style } = props
   return (
     <Box
       sx={{
-        position: "relative",
-        width: "100%",
-        // maxWidth: isSm ? "350px" : "1200px",
-        display: "flex",
-        flexFlow: "row nowrap",
-        justifyContent: "space-between",
-        alignItems: "center",
-        margin: " 0 auto",
-        padding: isSm ? "0 20px" : "0 75px",
+        position: 'relative',
+        width: isSm ? 'calc(100% - 20px)' : 'calc(100% - 75px)',
+        maxWidth: isSm ? 'unset' : '1920px',
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        margin: ' 0 auto',
         // [theme.breakpoints.up("lg")]: {
         //     maxWidth: "1400px !important",
         //   },
@@ -31,10 +30,10 @@ export default function CenterSection(props: CenterSectionParams) {
         // [theme.breakpoints.down("md")]: {
         //   maxWidth: "1000px !important",
         // },
-        ...style,
+        ...style
       }}
     >
       {children}
     </Box>
-  );
+  )
 }

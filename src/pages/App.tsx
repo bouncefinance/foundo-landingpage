@@ -14,8 +14,6 @@ function App() {
   }, [pathname]);
   return (
     <Suspense>
-      <Header />
-      <LeftBar />
       <Box
         sx={{
           width: "100%",
@@ -35,6 +33,8 @@ function App() {
           />
         </Routes>
       </Box>
+      <Header />
+      <LeftBar />
     </Suspense>
   );
 }

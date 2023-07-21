@@ -51,7 +51,11 @@ export const mainTheme = createTheme({
   spacing: defaultTheme.spacing,
   palette: defaultTheme.palette,
   breakpoints: defaultTheme.breakpoints,
-
+  height: {
+    header: '76px',
+    mobileHeader: '51px',
+    footer: '60px'
+  },
   typography: {
     fontFamily: FONTS.primary,
     color: defaultTheme.palette.text.primary,

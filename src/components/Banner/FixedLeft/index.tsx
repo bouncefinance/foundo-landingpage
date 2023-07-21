@@ -1,29 +1,33 @@
-import { Box, Typography } from "@mui/material";
-import BackVideo from 'assets/video/backVideo.mp4'
+import { Box, Typography } from '@mui/material'
+import BackVideo from 'components/assets/video/backVideo.mp4'
+import { useIsSMDown } from '../../../theme/useTheme'
 
 export default function FixedLeft({ style }: { style?: React.CSSProperties }) {
+  const isSm = useIsSMDown()
   return (
     <Box
       sx={{
-        position: "absolute",
-        width: "140px",
-        top: "20%",
-        left: "0",
-        transform: "translate3D(0, 0,0)",
-        display: "flex",
-        flexFlow: "column nowrap",
-        justifyContent: "flex-start",
-        alignContent: "center",
-        ...style,
+        position: 'absolute',
+        width: '140px',
+        top: '20%',
+        left: '0',
+        transform: 'translate3D(0, 0,0)',
+        display: 'flex',
+        flexFlow: 'column nowrap',
+        justifyContent: 'flex-start',
+        alignContent: 'center',
+        ...style
       }}
     >
       <video
         style={{
-          position: "relative",
-          width: "100%",
-          height: "100%",
-          marginBottom: "15px",
-          objectFit: "cover",
+          position: 'relative',
+          width: isSm ? '90px' : '140px',
+          height: isSm ? '90px' : '140px',
+          overflow: 'hidden',
+          borderRadius: '4px',
+          marginBottom: '15px',
+          objectFit: 'cover'
         }}
         auto-pause-if-navigate="true"
         playsInline
@@ -38,14 +42,15 @@ export default function FixedLeft({ style }: { style?: React.CSSProperties }) {
       <Typography
         sx={{
           fontFamily: `'Inter'`,
-          width: "100%",
-          textAlign: "left",
+          width: '100%',
+          textAlign: 'left',
           fontWeight: 400,
-          fontSize: "12px",
+          fontSize: '12px',
+          color: 'var(--ps-text-5)'
         }}
       >
         THE BEST CERTIFIED MATERIALS
       </Typography>
     </Box>
-  );
+  )
 }

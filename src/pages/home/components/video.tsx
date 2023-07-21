@@ -1,23 +1,23 @@
-import { Box } from "@mui/material";
-import BackVideo from 'assets/video/backVideo.mp4'
+import { Box } from '@mui/material'
+// import BackVideo from 'components/assets/video/backVideo.mp4'
 export default function VideoSection() {
   return (
     <Box
       sx={{
-        position: "relative",
-        width: "100vw",
-        height: "100vh",
-        zIndex: 2,
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+        zIndex: 2
       }}
     >
-      <video
+      {/* <video
         style={{
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover'
         }}
         auto-pause-if-navigate="true"
         playsInline
@@ -28,7 +28,7 @@ export default function VideoSection() {
         loop
         autoPlay
         src={BackVideo}
-      ></video>
+      ></video> */}
     </Box>
-  );
+  )
 }

@@ -1,77 +1,77 @@
-import NecklaceJson from "assets/lottie/animatinDm4.json";
-import { create } from "@lottiefiles/lottie-interactivity";
-import { useEffect, useRef, useState } from "react";
-import { useIsSMDown } from "../../../../theme/useTheme";
+// import NecklaceJson from 'components/assets/lottie/animatinDm4.json'
+import { create } from '@lottiefiles/lottie-interactivity'
+import { useEffect, useRef, useState } from 'react'
+import { useIsSMDown } from '../../../../theme/useTheme'
 
-require("@lottiefiles/lottie-player");
+require('@lottiefiles/lottie-player')
 const Necklace = ({
   style,
   onceAnimation,
-  animationRatio,
+  animationRatio
 }: {
-  style?: React.CSSProperties;
-  onceAnimation?: boolean;
-  animationRatio?: string;
+  style?: React.CSSProperties
+  onceAnimation?: boolean
+  animationRatio?: string
 }) => {
-  const isSm = useIsSMDown();
-  const lottieEl = useRef<any>(null);
-  const [topNum, setTopNUm] = useState(0);
-  let countTime = 40;
+  const isSm = useIsSMDown()
+  const lottieEl = useRef<any>(null)
+  const [topNum, setTopNUm] = useState(0)
+  let countTime = 40
   useEffect(() => {
     const countdown = setInterval(() => {
       if (!onceAnimation) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        countTime = countTime - 1;
+        countTime = countTime - 1
         if (countTime >= 0) {
-          setTopNUm(countTime);
+          setTopNUm(countTime)
         } else {
-          clearInterval(countdown);
+          clearInterval(countdown)
         }
       } else {
-        clearInterval(countdown);
+        clearInterval(countdown)
       }
-    }, 75);
-    const lottieIdEl = document.getElementById("lottie-player");
+    }, 75)
+    const lottieIdEl = document.getElementById('lottie-player')
     if (lottieIdEl && lottieIdEl !== undefined) {
       // 4. configure the interactivity library
       try {
         create({
-          mode: "scroll",
-          player: lottieIdEl || "#lottie-player",
-          container: "#animation1",
+          mode: 'scroll',
+          player: lottieIdEl || '#lottie-player',
+          container: '#animation1',
           actions: [
             {
               visibility: [0, 1],
-              type: "seek",
-              frames: [0, 128],
-            },
-          ],
-        });
+              type: 'seek',
+              frames: [0, 128]
+            }
+          ]
+        })
       } catch (error) {
-        console.error("create lottie error");
+        console.error('create lottie error')
       }
     }
-  }, []);
+  }, [])
   return (
     <lottie-player
       ref={lottieEl}
-      id={"lottie-player"}
+      id={'lottie-player'}
       autoplay={false}
-      src={JSON.stringify(NecklaceJson)}
+      src={JSON.stringify('https://app.bounce.finance/lottie/animatinDm4.json')}
       loop={false}
       style={{
-        position: "fixed",
+        position: 'fixed',
         top: `${animationRatio ? Number(animationRatio) * 50 : 0}%`,
-        width: isSm ? "80%" : "600px",
-        height: isSm ? "auto" : "750px",
-        left: "50%",
+        width: isSm ? '100%' : '600px',
+        height: isSm ? 'auto' : '750px',
+        left: '50%',
         transform: `translate3D(-50%, -${
           topNum > 0 ? topNum : animationRatio ? Number(animationRatio) * 50 : 0
         }%, 0) scale(${1 - Number(animationRatio) * 0.55})`,
-        ...style,
+        ...style
       }}
     ></lottie-player>
-  );
-};
+  )
+}
 
-export default Necklace;
+export default Necklace
