@@ -1,9 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import { useIsSMDown } from '../../theme/useTheme'
-
 export default function FundoInfo() {
   const isSm = useIsSMDown()
-  1
   return (
     <Box
       sx={{
