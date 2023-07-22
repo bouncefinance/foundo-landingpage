@@ -2,11 +2,11 @@ import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import CenterSection from "components/CenterSection";
 import NecklaceJson from "assets/lottie/animatinDm4.json";
-import LogoIcon from "assets/img/detail/logo.png";
-import ShareIcon from "assets/img/share.png";
+// import LogoIcon from "assets/img/detail/logo.png";
+// import ShareIcon from "assets/img/share.png";
 import { useIsSMDown } from "../../theme/useTheme";
-import ReactCopyToClipboard from "react-copy-to-clipboard";
-import { toast } from "react-toastify";
+// import ReactCopyToClipboard from "react-copy-to-clipboard";
+// import { toast } from "react-toastify";
 
 require("@lottiefiles/lottie-player");
 const TokenDetail: React.FC = () => {
@@ -64,7 +64,7 @@ const TokenDetail: React.FC = () => {
               }}
               mb={"24px"}
             >
-              0xEBf19415d94be89A1d692F82af391685dC1Bff79
+              TBD
             </Typography>
             <Typography
               sx={{
@@ -76,7 +76,7 @@ const TokenDetail: React.FC = () => {
             >
               NETWORK
             </Typography>
-            <Typography
+            {/* <Typography
               sx={{
                 fontWeight: 500,
                 fontSize: "14px",
@@ -118,6 +118,16 @@ const TokenDetail: React.FC = () => {
                   alt=""
                 />
               </ReactCopyToClipboard>
+            </Typography> */}
+            <Typography
+              sx={{
+                fontWeight: 500,
+                fontSize: "14px",
+                wordBreak: "break-all",
+              }}
+              mb={"24px"}
+            >
+              TBD
             </Typography>
             <Typography
               sx={{
@@ -136,7 +146,7 @@ const TokenDetail: React.FC = () => {
               }}
               mb={"24px"}
             >
-              100
+                TBD
             </Typography>
             <Typography
               sx={{
@@ -275,7 +285,7 @@ const TokenDetail: React.FC = () => {
                       fontSize: "16px",
                     }}
                   >
-                    0xEBf19415d94be89A1d692F82af391685dC1Bff79
+                    TBD
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
@@ -290,7 +300,7 @@ const TokenDetail: React.FC = () => {
                   </Typography>
                 </Grid>
                 <Grid item xs={8}>
-                  <Typography
+                  {/* <Typography
                     sx={{
                       fontWeight: 500,
                       fontSize: "16px",
@@ -331,6 +341,14 @@ const TokenDetail: React.FC = () => {
                         alt=""
                       />
                     </ReactCopyToClipboard>
+                  </Typography> */}
+                  <Typography
+                    sx={{
+                      fontWeight: 500,
+                      fontSize: "16px",
+                    }}
+                  >
+                    TBD
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
@@ -345,13 +363,21 @@ const TokenDetail: React.FC = () => {
                   </Typography>
                 </Grid>
                 <Grid item xs={8}>
-                  <Typography
+                  {/* <Typography
                     sx={{
                       fontWeight: 500,
                       fontSize: "16px",
                     }}
                   >
                     100
+                  </Typography> */}
+                  <Typography
+                    sx={{
+                      fontWeight: 500,
+                      fontSize: "16px",
+                    }}
+                  >
+                    TBD
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
