@@ -1,8 +1,7 @@
 import { Box, Typography, styled } from '@mui/material'
-import BtcIcon from 'components/assets/img/btc.png'
+import BnbIcon from 'components/assets/img/binance.svg'
 import { useCountDown } from 'ahooks'
 import { useState, useMemo } from 'react'
-import moment from 'moment'
 import DiamondIcon from 'components/assets/img/D1.png'
 import DiamondBackIcon from 'components/assets/img/D2.png'
 import CenterSection from 'components/CenterSection'
@@ -172,7 +171,7 @@ export default function Footer() {
   const isSm = useIsSMDown()
   const [isWaiting, setIsWaiting] = useState<boolean>(true)
   const [countdown, { days, hours, minutes, seconds }] = useCountDown({
-    targetDate: moment('2023-07-1', 'YYYY-MM-DD').valueOf(),
+    targetDate: new Date(1692921600 * 1000).getTime(),
     onEnd: () => {
       setIsWaiting(false)
     }
@@ -314,9 +313,9 @@ export default function Footer() {
                   lineHeight: '24px'
                 }}
               >
-                10
+                40
                 <img
-                  src={BtcIcon}
+                  src={BnbIcon}
                   style={{
                     width: '24px',
                     height: '24px',
@@ -325,7 +324,7 @@ export default function Footer() {
                   }}
                   alt=""
                 />
-                ETH
+                BNB
               </Typography>
             </Box>
           </>
