@@ -98,7 +98,7 @@ const TokenDetail: React.FC = () => {
                 }}
                 alt=""
               />
-              BNB Chain
+              Ethereum Mainnet
               <ReactCopyToClipboard
                 text={window.location.href}
                 onCopy={() => toast.success("Successfully copied")}
@@ -127,7 +127,7 @@ const TokenDetail: React.FC = () => {
               }}
               mb={"24px"}
             >
-              BNB Chain
+              Ethereum Mainnet
             </Typography>
             <Typography
               sx={{
@@ -321,7 +321,7 @@ const TokenDetail: React.FC = () => {
                       }}
                       alt=""
                     />
-                    BNB Chain
+                    Ethereum Mainnet
                     <ReactCopyToClipboard
                       text={window.location.href}
                       onCopy={() => toast.success("Successfully copied")}
@@ -348,7 +348,7 @@ const TokenDetail: React.FC = () => {
                       fontSize: "16px",
                     }}
                   >
-                    BNB Chain
+                    Ethereum Mainnet
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>

@@ -1,5 +1,5 @@
 import { Box, Typography, styled } from '@mui/material'
-import BnbIcon from 'components/assets/img/binance.svg'
+import BnbIcon from 'components/assets/img/btc.png'
 import { useCountDown } from 'ahooks'
 import { useState, useMemo } from 'react'
 import DiamondIcon from 'components/assets/img/D1.png'
@@ -313,7 +313,7 @@ export default function Footer() {
                   lineHeight: '24px'
                 }}
               >
-                40
+                5
                 <img
                   src={BnbIcon}
                   style={{
@@ -324,12 +324,13 @@ export default function Footer() {
                   }}
                   alt=""
                 />
-                BNB
+                ETH
               </Typography>
             </Box>
           </>
         </Box>
       )}
+      {/* TODO link to auction page  */}
       {!isWaiting && <GoAuctionBtn>GO AUCTION!</GoAuctionBtn>}
       {countdown > 0 && (
         <Box
