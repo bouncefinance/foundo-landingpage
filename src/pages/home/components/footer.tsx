@@ -171,7 +171,7 @@ export default function Footer() {
   const isSm = useIsSMDown()
   const [isWaiting, setIsWaiting] = useState<boolean>(true)
   const [countdown, { days, hours, minutes, seconds }] = useCountDown({
-    targetDate: new Date(1692921600 * 1000).getTime(),
+    targetDate: 1692972000000,
     onEnd: () => {
       setIsWaiting(false)
     }
