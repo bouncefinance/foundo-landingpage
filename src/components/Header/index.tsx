@@ -49,9 +49,9 @@ export default function Header() {
     },
     {
       title: 'AUCTION  DETAILS',
-      link: routes.tokenDetail.index,
+      link: 'https://app.bounce.finance/foundo/detail/18392',
       // link: routes.thirdPart.foundoDetail,
-      external: false
+      external: true
     },
     {
       title: 'JOIN DISCORD',

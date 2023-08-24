@@ -146,7 +146,7 @@ const TokenDetail: React.FC = () => {
               }}
               mb={"24px"}
             >
-                TBD
+              TBD
             </Typography>
             <Typography
               sx={{
@@ -283,9 +283,13 @@ const TokenDetail: React.FC = () => {
                     sx={{
                       fontWeight: 500,
                       fontSize: "16px",
+                      cursor:'pointer'
+                    }}
+                    onClick={() => {
+                        window.open('https://etherscan.io/address/0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D', '_blank')
                     }}
                   >
-                    TBD
+                    0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
@@ -377,7 +381,7 @@ const TokenDetail: React.FC = () => {
                       fontSize: "16px",
                     }}
                   >
-                    TBD
+                    ETH
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
