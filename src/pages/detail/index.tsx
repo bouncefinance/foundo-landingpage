@@ -153,7 +153,7 @@ const TokenDetail: React.FC = () => {
               }}
               mb={"24px"}
             >
-              ETH
+              0
             </Typography>
             <Typography
               sx={{
@@ -391,7 +391,7 @@ const TokenDetail: React.FC = () => {
                       fontSize: "16px",
                     }}
                   >
-                    ETH
+                   0
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
