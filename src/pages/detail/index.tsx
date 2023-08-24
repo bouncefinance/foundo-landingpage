@@ -51,6 +51,13 @@ const TokenDetail: React.FC = () => {
                 fontWeight: 500,
                 color: "#959595",
                 fontSize: "14px",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                window.open(
+                  "https://etherscan.io/address/0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D",
+                  "_blank"
+                );
               }}
               mb={"12px"}
             >
@@ -64,7 +71,7 @@ const TokenDetail: React.FC = () => {
               }}
               mb={"24px"}
             >
-              TBD
+              0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D
             </Typography>
             <Typography
               sx={{
@@ -146,7 +153,7 @@ const TokenDetail: React.FC = () => {
               }}
               mb={"24px"}
             >
-              TBD
+              ETH
             </Typography>
             <Typography
               sx={{
@@ -283,10 +290,13 @@ const TokenDetail: React.FC = () => {
                     sx={{
                       fontWeight: 500,
                       fontSize: "16px",
-                      cursor:'pointer'
+                      cursor: "pointer",
                     }}
                     onClick={() => {
-                        window.open('https://etherscan.io/address/0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D', '_blank')
+                      window.open(
+                        "https://etherscan.io/address/0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D",
+                        "_blank"
+                      );
                     }}
                   >
                     0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D
