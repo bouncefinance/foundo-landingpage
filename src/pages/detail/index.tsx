@@ -51,13 +51,6 @@ const TokenDetail: React.FC = () => {
                 fontWeight: 500,
                 color: "#959595",
                 fontSize: "14px",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                window.open(
-                  "https://etherscan.io/address/0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D",
-                  "_blank"
-                );
               }}
               mb={"12px"}
             >
@@ -68,10 +61,17 @@ const TokenDetail: React.FC = () => {
                 fontWeight: 500,
                 fontSize: "14px",
                 wordBreak: "break-all",
+                cursor: "pointer",
               }}
               mb={"24px"}
+              onClick={() => {
+                window.open(
+                  "https://etherscan.io/token/0xAD75645614D32467cc426B53af6f1C5a8F8DDe84",
+                  "_blank"
+                );
+              }}
             >
-              0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D
+              0xAD75645614D32467cc426B53af6f1C5a8F8DDe84
             </Typography>
             <Typography
               sx={{
@@ -294,12 +294,12 @@ const TokenDetail: React.FC = () => {
                     }}
                     onClick={() => {
                       window.open(
-                        "https://etherscan.io/address/0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D",
+                        "https://etherscan.io/token/0xAD75645614D32467cc426B53af6f1C5a8F8DDe84",
                         "_blank"
                       );
                     }}
                   >
-                    0x8adA332eA4A16C08C033B1F17682A8C0D8BB275D
+                    0xAD75645614D32467cc426B53af6f1C5a8F8DDe84
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
@@ -391,7 +391,7 @@ const TokenDetail: React.FC = () => {
                       fontSize: "16px",
                     }}
                   >
-                   0
+                    0
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
