@@ -49,7 +49,7 @@ export default function Header() {
     },
     {
       title: 'AUCTION  DETAILS',
-      link: 'https://app.bounce.finance/rwa/detail',
+      link: 'https://app.bounce.finance/rwa/detail/TXV0YW50RW5nbGlzaEF1Y3Rpb24wMDFfREhO',
       // link: routes.thirdPart.foundoDetail,
       external: true
     },

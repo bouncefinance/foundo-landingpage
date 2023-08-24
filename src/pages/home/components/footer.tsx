@@ -332,7 +332,7 @@ export default function Footer() {
       )}
       {/* TODO link to auction page  */}
       {!isWaiting && <GoAuctionBtn onClick={() => {
-        window.open('https://app.bounce.finance/rwa/detail', '_blank')
+        window.open('https://app.bounce.finance/rwa/detail/TXV0YW50RW5nbGlzaEF1Y3Rpb24wMDFfREhO', '_blank')
       }}>GO AUCTION!</GoAuctionBtn>}
       {countdown > 0 && (
         <Box
